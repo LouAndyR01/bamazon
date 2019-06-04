@@ -70,7 +70,7 @@ var viewProducts = function(){
       if(productNeeded <= res[0].stock_quantity){
         var totalPrice = res[0].price * productNeeded;
         console.log("Your order has been completed");
-        console.log("Your total for " + productNeeded + " " + res[0].product_name + " is " + totalPrice + ".");
+        console.log("Your total for " + productNeeded + " " + res[0].product_name + " is " + "$" + totalPrice + ".");
   
         connection.query("UPDATE products SET stock_quantity =  " + (res[0].stock_quantity - productNeeded) + " WHERE item_id = " + ID);
       } else {
